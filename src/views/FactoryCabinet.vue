@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="factory-cabinet">
     <button class="logout-btn" @click="logout">Выйти</button>
     <div class="manufacturer-card">
       <h3>{{ manufacturer.name }}</h3>
@@ -48,7 +48,6 @@ export default {
     }
   },
   created() {
-    // Если не авторизован — редирект на страницу входа
     if (localStorage.getItem('isFactoryLoggedIn') !== 'true') {
       this.$router.push('/for-manufacturers')
     }
@@ -63,6 +62,15 @@ export default {
 </script>
 
 <style scoped>
+.factory-cabinet {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #e0f7fa 0%, #fffbe6 100%);
+  padding: 32px 0 48px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .logout-btn {
   display: block;
   margin: 24px auto 16px auto;
@@ -83,6 +91,7 @@ export default {
 }
 
 .manufacturer-card {
+  width: 100%;
   max-width: 400px;
   margin: 0 auto 32px auto;
   background: linear-gradient(120deg, #fffbe6 0%, #e0f7fa 100%);
@@ -107,5 +116,22 @@ export default {
   margin-top: 0.7rem;
   color: #232526;
   font-size: 0.98rem;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .factory-cabinet {
+    padding: 16px 0 24px 0;}
+  .manufacturer-card {
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+    font-size: 0.98rem;
+  }
+  .logout-btn {
+    width: 90vw;
+    max-width: 320px;
+    padding: 0.7rem 0;
+    font-size: 0.98rem;
+  }
 }
 </style>

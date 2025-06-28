@@ -6,8 +6,10 @@
         <p>
           Добро пожаловать на платформу, где производители беспилотных летательных аппаратов и вертолётов размещают свои товары. Здесь вы найдёте широкий выбор техники, сможете сравнить предложения и выбрать лучшее для себя или вашего бизнеса.
         </p>
-        <router-link to="/uav" class="hero-btn">Перейти к БПЛА</router-link>
-        <router-link to="/helicopters" class="hero-btn secondary">Перейти к вертолётам</router-link>
+        <div class="hero-btns">
+          <router-link to="/uav" class="hero-btn">Перейти к БПЛА</router-link>
+          <router-link to="/helicopters" class="hero-btn secondary">Перейти к вертолётам</router-link>
+        </div>
       </div>
       <div class="hero-image">
         <img src="@/assets/говно.jpg" alt="Маркетплейс БПЛА и Вертолётов" />
@@ -56,32 +58,49 @@
 
 .hero-content {
   max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-content h1 {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 18px;
   color: #00cfff;
+  letter-spacing: 1.5px;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .hero-content p {
   font-size: 1.18rem;
   margin-bottom: 28px;
   line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #00cfff;
   color: #232526;
-  font-weight: 600;
+  font-weight: 700;
   padding: 12px 28px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
-  margin-right: 16px;
-  transition: background 0.2s, color 0.2s;
+  font-size: 1.08rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(0,207,255,0.08);
+  border: none;
+  outline: none;
 }
 
 .hero-btn:hover {
@@ -91,8 +110,8 @@
 
 .hero-btn.secondary {
   background: #fff;
-  color: #232526;
-  border: 1px solid #00cfff;
+  color: #00cfff;
+  border: 1.5px solid #00cfff;
 }
 
 .hero-btn.secondary:hover {
@@ -106,24 +125,27 @@
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.18);
   background: #fff;
+  object-fit: cover;
 }
 
 .features {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  justify-content: center;
-}
+  justify-content: center}
 
 .feature-card {
   background: #292b2c;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 32px 24px;
   max-width: 320px;
   min-width: 220px;
   text-align: center;
   box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
-  transition: transform 0.18s;
+  transition: transform 0.18s, box-shadow 0.18s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .feature-card:hover {
@@ -139,9 +161,10 @@
 
 .feature-card h3 {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 10px;
   color: #00cfff;
+  letter-spacing: 1px;
 }
 
 .feature-card p {
@@ -152,20 +175,63 @@
 
 /* Адаптивность */
 @media (max-width: 900px) {
+  .homepage {
+    padding: 16px 0;
+  }
   .hero {
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
     text-align: center;
+    margin-bottom: 32px;
+    padding: 0 8px;
   }
   .hero-content {
     max-width: 100%;
+    padding: 0 4vw;
+    align-items: center;
+  }
+  .hero-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+  .hero-btns {
+    gap: 10px;
+  }
+  .hero-btn, .hero-btn.secondary {
+    font-size: 0.98rem;
+    padding: 10px 18px;
+    border-radius: 8px;
   }
   .hero-image img {
     max-width: 90vw;
+    border-radius: 12px;
+    margin-bottom: 12px;
   }
   .features {
     flex-direction: column;
-    gap: 24px;
+    gap: 18px;
+    padding: 0 4vw;
+  }
+  .feature-card {
+    max-width: 100%;
+    min-width: 0;
+    padding: 20px 10px;
+    border-radius: 12px;
+  }
+  .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+  .feature-card p {
+    font-size: 0.98rem;
   }
 }
 </style>

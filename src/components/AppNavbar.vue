@@ -1,6 +1,3 @@
-Конечно! Вот полный рабочий код для вашего AppNavbar.vue, где логотип и название кликабельны и ведут на главную страницу как в мобильной, так и в десктопной версии:
-
-```vue
 <template>
   <nav class="navbar">
     <!-- Левая часть: меню для ПК, логотип+название для мобилки -->
@@ -117,7 +114,7 @@ function closeMenu() {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 38px;
+  width: 39px;
   height: 38px;
   background: none;
   border: none;
@@ -128,10 +125,10 @@ function closeMenu() {
 .burger span {
   display: block;
   width: 24px;
-  height: 3px;
-  margin: 4px 0;
+  height: 2px;
+  margin: 3px 0;
   background: #fff;
-  border-radius: 2px;
+  border-radius: 3px;
   transition: 0.3s;
 }
 
@@ -196,6 +193,7 @@ function closeMenu() {
 /* Скрываем мобильный бренд на ПК */
 .navbar-brand-mobile {
   display: none;
+  gap: 6px; /* уменьшите, если нужно */
 }
 
 @media (max-width: 900px) {
@@ -205,8 +203,11 @@ function closeMenu() {
     position: relative;
   }
   .navbar-left {
-    flex: none;
+    flex: 1;
+    display: flex;
+    align-items: center;
     gap: 10px;
+    min-width: 0;
   }
   .navbar-center {
     display: none;
@@ -215,13 +216,25 @@ function closeMenu() {
     flex: none;
     gap: 0;
   }
-  .navbar-left > a {
-    display: none;
-  }
-  .navbar-brand-mobile {
+  .navbar-left > .navbar-brand-mobile {
     display: flex;
     align-items: center;
     gap: 10px;
+    min-width: 0;
+  }
+  .navbar-left > a:not(.navbar-brand-mobile) {
+    display: none;
+  }
+  .navbar-logo {
+    min-width: 32px;
+    min-height: 32px;
+  }
+  .navbar-title {
+    font-size: 1.05rem;
+    white-space: nowrap;
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+    max-width: none; /* или увеличьте, например, до 200px */
   }
   .navbar-right > a {
     display: none;

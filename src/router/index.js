@@ -20,7 +20,15 @@ const routes = [
     { path: '/for-manufacturers', component: FactoryLogin },
     { path: '/add-product', component: AddProduct },
     { path: '/factory-cabinet', component: FactoryCabinet },
-    { path: '/helicopters', component: HelicoptersPage}
+    { path: '/helicopters', component: HelicoptersPage},
+    {
+        path: '/my-vue-marketplace',
+        redirect: '/'
+    },
+    {
+        path: '/',
+        component: HomePage
+    },
 
 ];
 

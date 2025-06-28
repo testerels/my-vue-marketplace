@@ -161,33 +161,66 @@ export default {
 
 /* Адаптивность */
 @media (max-width: 900px) {
+  .aboutpage {
+    padding: 16px 0;
+  }
   .about-hero {
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
     text-align: center;
+    margin-bottom: 32px;
+    padding: 0 8px;
   }
   .about-hero-content {
     max-width: 100%;
+    padding: 0 4vw;
   }
-  .about-hero-images .main-img {
-    max-width: 90vw;
-    width: 60vw;
+  .about-hero-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  .about-hero-content p {
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+  .about-hero-images {
+    min-width: 0;
+    width: 100%;
+    position: static;
+    margin-bottom: 0;
   }
   .about-hero-images .sub-img {
-    width: 32vw;
-    max-width: 60vw;
-    left: 70%;
-    top: 80%;
+    position: static;
+    width: 90vw;
+    max-width: 95vw;
+    min-width: 0;
+    border-radius: 12px;
+    margin: 0 auto 12px auto;
+    box-shadow: 0 2px 8px rgba(0,207,255,0.12);
+    transform: none;
+    left: auto;
+    top: auto;
   }
   .about-features {
     flex-direction: column;
-    gap: 24px;
+    gap: 18px;
+    padding: 0 4vw;
   }
   .feature-card {
-    max-width: 95vw;
+    max-width: 100%;
+    min-width: 0;
+    padding: 20px 10px;
   }
-  .about-hero-content h1 {
+  .feature-icon {
     font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+  .feature-card p {
+    font-size: 0.98rem;
   }
 }
 </style>

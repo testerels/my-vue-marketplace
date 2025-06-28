@@ -206,13 +206,15 @@ function addToCart(heli) {
   to { opacity: 1; transform: translateX(-50%) translateY(0);}
 }
 
-@media (max-width: 900px) {
-  .heli-list {
-    gap: 1.2rem;
+@media (max-width: 600px) {
+  .heli-hero {
+    padding: 2vw 0 3vw 0;
   }
-  .heli-card {
-    width: 90vw;
-    max-width: 350px;
+  .heli-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 6px rgba(92, 204, 107, 0.18);
   }
 }
 </style>

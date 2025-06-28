@@ -206,13 +206,12 @@ function addToCart(uav) {
   to { opacity: 1; transform: translateX(-50%) translateY(0);}
 }
 
-@media (max-width: 900px) {
-  .uav-list {
-    gap: 1.2rem;
-  }
-  .uav-card {
-    width: 90vw;
-    max-width: 350px;
+@media (max-width: 600px) {
+  .uav-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 6px rgba(92, 204, 107, 0.18);
   }
 }
 </style>
